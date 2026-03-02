@@ -47,7 +47,7 @@ export default function ResumeBuilder() {
                 const html2pdf = (await import('html2pdf.js')).default;
 
                 const element = contentRef.current;
-                const opt = {
+                const opt: any = {
                     margin: [15, 15, 15, 15],
                     filename: 'Optimized_Resume.pdf',
                     image: { type: 'jpeg', quality: 0.98 },
