@@ -79,7 +79,8 @@ export default function ResumeBuilder() {
             formData.append('job_description', jobDescription);
 
             // Call the FastAPI Python Backend
-            const response = await fetch('http://localhost:8000/api/optimize-resume', {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+            const response = await fetch(`${apiUrl}/api/optimize-resume`, {
                 method: 'POST',
                 body: formData,
             });
