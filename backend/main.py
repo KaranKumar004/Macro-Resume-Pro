@@ -126,7 +126,7 @@ async def optimize_resume(
         }
     except Exception as e:
         print(f"Gemini API Error: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"AI Processing failed. Make sure GEMINI_API_KEY is set in .env")
+        raise HTTPException(status_code=500, detail=f"AI Processing failed: {str(e)}")
 
 if __name__ == "__main__":
     import uvicorn
